@@ -163,7 +163,7 @@ overflow:visible;`;
 const SharedPost=styled.div`
 padding-right:40px;
 flex-wrap:nowrap;
-padding 12px 16px 0;
+padding:12px 16px 0;
 margin-bottom:8px;
 align-items:center;
 display:flex;
