@@ -1,12 +1,17 @@
+import React from 'react';  
+import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import Rightside from './Rightside';
 import Leftside from './Leftside';
 import Main from './Main';
+import { Navigate} from "react-router-dom";
+import {connect} from "react-redux";
 
 
 const Home=(props)=>{
     return (
         <Cointainer>
+            {!props.user && <Navigate to ="/" />}
             <Section>
                 <h5><a>Hiring in a hurry? </a></h5>
                 <p>Find talented pros in record time with upwork and keep business moving.</p>
@@ -71,5 +76,10 @@ margin:25px 0;
 }
 
 `;
-export default Home;
+const mapStateToProps=(state)=>{
+    return {
+        user:state.userState.user,    
+    }
+}
+export default connect(mapStateToProps)(Home);
 
